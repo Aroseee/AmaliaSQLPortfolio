@@ -1,0 +1,78 @@
+##This project reveals insights from Airbnb listings in Rhode Island, USA.
+
+--What are the top 5 neighborhoods in Rhode Island with the highest listing prices?
+
+SELECT TOP (5) neighbourhood, AVG(price) as avg_price
+FROM airbnb.dbo.listings1$
+GROUP BY neighbourhood
+ORDER BY avg_price desc
+
+--What are the top 5 neighborhoods with the most Airbnb listings?
+
+SELECT TOP (5) neighbourhood,calculated_host_listings_count as most_listings
+FROM airbnb.dbo.listings1$
+GROUP BY neighbourhood , calculated_host_listings_count
+ORDER BY most_listings desc
+
+--What is the average number of reviews per listing?
+
+SELECT AVG(number_of_reviews) as avg_reviews_per_listing
+FROM airbnb.dbo.listings1$
+
+--Which types of properties are most common?
+
+SELECT  room_type, COUNT (*) AS property_count
+FROM airbnb.dbo.listings1$
+GROUP BY room_type
+ORDER BY property_count desc
+
+--What is the distribution of listing prices in different neighborhoods?
+
+SELECT neighbourhood, 
+	MIN(price) as min_price,
+	MAX(price) as max_price,
+	AVG(price) as avg_price
+FROM airbnb.dbo.listings1$
+GROUP BY neighbourhood
+ORDER BY neighbourhood
+
+--What is the average percentage of time that listings are occupied in each neighborhood?
+
+SELECT neighbourhood,
+	AVG(availability_365 / 100) as avg_occupancy_percentage
+FROM airbnb.dbo.listings1$
+GROUP BY neighbourhood
+ORDER BY neighbourhood asc
+
+--Which hosts have the most listings?
+
+SELECT host_name, calculated_host_listings_count 
+FROM airbnb.dbo.listings1$
+GROUP BY host_name, calculated_host_listings_count
+ORDER BY calculated_host_listings_count desc
+
+--Is there a relationship between the number of lsitings a host has and their number of reviews?
+
+SELECT host_id, number_of_reviews,
+	COUNT (*) as num_listings
+FROM AirBnB.dbo.listings1$
+GROUP BY host_id, number_of_reviews
+ORDER BY num_listings desc
+
+--Which host has the most listings?
+
+SELECT host_id,host_name,
+	COUNT (*) as num_listings
+FROM AirBnB.dbo.listings1$	
+GROUP BY host_id, host_name
+ORDER BY num_listings desc
+
+--How do prices vary based on the property type?
+
+SELECT DISTINCT room_type,
+	MIN(price) as min_price,
+	MAX(price) as max_price,
+	AVG(price) as avg_price
+FROM AirBnB.dbo.listings1$
+GROUP BY room_type
+ORDER BY avg_price desc;
