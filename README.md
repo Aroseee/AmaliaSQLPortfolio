@@ -7,16 +7,19 @@ Feel free to explore the projects listed below to get an understanding of my con
 ##Project 1: Airbnb Analysis
 
 **Description**: An analysis of Airbnb listings in Rhode Island, exploring pricing trends, neighborhood insights, and occupancy rates.
+
 **Skills**: Complex SQL queries, data aggregation, subqueries.
 
 ##Project 2: ...
 
 **Description**: 
+
 **Skills**: 
 
 ##Project 3: ...
 
 **Description**:
+
 **Skills**: 
 
 ## About Me:
