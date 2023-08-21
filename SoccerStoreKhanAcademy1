@@ -1,0 +1,33 @@
+##Create your own store! Your store should sell one type of things, 
+like clothing or bikes, whatever you want your store to specialize in.##
+
+CREATE TABLE soccerstore (id INTEGER PRIMARY KEY, name TEXT, item_type TEXT, quantity INTEGER, price INTEGER, color TEXT);
+
+INSERT INTO soccerstore VALUES (1,"Neymar Jersey", "Jersey", 79, 120, "Multi");
+INSERT INTO soccerstore VALUES (2, "Nike Zoom Vapor","Cleats",54,130, "Multi");
+INSERT INTO soccerstore VALUES (3, "Nike Phantom Luna","Cleats",19,150,"Multi");
+INSERT INTO soccerstore VALUES (4, "Adidas x CrazyFast","Cleats",2,175,"Multi");
+INSERT INTO soccerstore VALUES (5, "Adidas Replica Jersey","Jersey",163,90, "Multi");
+INSERT INTO soccerstore VALUES (6, "Youth Nike Socks","Apparel",545,15,"White");
+INSERT INTO soccerstore VALUES (7,"UnderArmour Men's Shorts","Apparel",98,25,"Black");
+INSERT INTO soccerstore VALUES (8,"Nike Academy Pants","Apparel",283,40,"Black");
+INSERT INTO soccerstore VALUES (9,"Nike Messi Ball","Balls", 47,37,"Blue");
+INSERT INTO soccerstore VALUES (10, "Adidas Adult Shinguards","Player Equipment",179,45,"Black");
+INSERT INTO soccerstore VALUES (11,"Veo Sport Camera","Smart Technology",68,999,"Green");
+INSERT INTO soccerstore VALUES (12,"Catapult One","Smart Technology",33,180,"Black");
+INSERT INTO soccerstore VALUES (13,"Adidas Stadium 3","Bags",82,45,"Black");
+INSERT INTO soccerstore VALUES (14,"Under Armour Hustle","Bags",21,40,"Red");
+INSERT INTO soccerstore VALUES (15, "FIFA World Cup replica","Balls",25,50, "Multi");
+INSERT INTO soccerstore VALUES (16,"Nike Youth Shinguards","Player Equipment",79,35,"White");
+
+SELECT * FROM soccerstore;
+
+SELECT * FROM soccerstore WHERE color = 'Multi' ORDER BY color;
+
+SELECT SUM(price) FROM soccerstore;
+SELECT MAX(quantity) FROM soccerstore;
+SELECT AVG(price) FROM soccerstore;
+
+SELECT * FROM soccerstore ORDER BY price desc;
+
+
