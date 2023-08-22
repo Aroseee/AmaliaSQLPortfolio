@@ -22,12 +22,16 @@ INSERT INTO soccerstore VALUES (16,"Nike Youth Shinguards","Player Equipment",79
 
 SELECT * FROM soccerstore;
 
-SELECT * FROM soccerstore WHERE color = 'Multi' ORDER BY color;
+##What is the total price of soccer ball inventory?##
+SELECT SUM(price) as price_total 
+FROM soccerstore 
+WHERE item_type = "Balls";
 
-SELECT SUM(price) FROM soccerstore;
-SELECT MAX(quantity) FROM soccerstore;
-SELECT AVG(price) FROM soccerstore;
+##Use statistics about the store items.##
+SELECT SUM(price),MAX(quantity),AVG(price)
+FROM soccerstore;
 
+##Order items by price.##
 SELECT * FROM soccerstore ORDER BY price desc;
 
 
